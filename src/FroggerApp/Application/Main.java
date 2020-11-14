@@ -11,8 +11,8 @@ public class Main extends Application{
 	}
 
 	public void start(Stage primaryStage) throws Exception {
-		GameScene_View gameScene_View= new GameScene_View(primaryStage);
-		gameScene_View.gameStart();
+		GameScene_View menuScene_View= new GameScene_View(primaryStage);
+		menuScene_View.gameStart();
 	}
 }
 
