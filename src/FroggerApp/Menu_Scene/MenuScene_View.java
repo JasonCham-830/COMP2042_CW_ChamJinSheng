@@ -16,7 +16,6 @@ public class MenuScene_View extends Parent {
 
     private Stage menuStage;
 
-
     public MenuScene_View(Stage menuStage){
         this.menuStage = menuStage;
     }

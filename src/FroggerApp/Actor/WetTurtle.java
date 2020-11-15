@@ -3,12 +3,12 @@ package FroggerApp.Actor;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Actor{
-	Image turtle1;
-	Image turtle2;
-	Image turtle3;
-	Image turtle4;
+	private Image turtle1;
+	private Image turtle2;
+	private Image turtle3;
+	private Image turtle4;
 	private int speed;
-	int i = 1;
+	private int i = 1;
 	boolean bool = true;
 	boolean sunk = false;
 	@Override

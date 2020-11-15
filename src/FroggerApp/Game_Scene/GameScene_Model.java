@@ -4,6 +4,7 @@ import FroggerApp.Actor.Animal;
 import FroggerApp.Actor.Digit;
 import FroggerApp.World.MyStage;
 import javafx.animation.AnimationTimer;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
@@ -13,6 +14,14 @@ public class GameScene_Model {
     private AnimationTimer timer;
     private MyStage background;
     private Animal animal;
+    private Scene scene;
+
+    public GameScene_Model(Stage primaryStage){
+        this.primaryStage = primaryStage;
+        background = new MyStage();
+        this.scene  = new Scene(background,600,800);
+        animal = new Animal("file:src/FroggerApp/Images_File/froggerUp.png");
+    };
 
     public void start() {
         background.playMusic();
@@ -32,7 +41,7 @@ public class GameScene_Model {
                     setNumber(animal.getPoints());
                 }
                 if (animal.getStop()) {
-                    System.out.print("STOPP:");
+                    System.out.print("STOP:");
                     background.stopMusic();
                     stop();
                     background.stop();
@@ -55,5 +64,45 @@ public class GameScene_Model {
             background.add(new Digit(k, 30, 360 - shift, 25));
             shift+=30;
         }
+    }
+
+    public MyStage getBackground(){
+        return background;
+    }
+
+    public void setBackground(MyStage background){
+        this.background = background;
+    }
+
+    public Animal getAnimal(){
+        return animal;
+    }
+
+    public void setAnimal(Animal animal){
+        this.animal = animal;
+    }
+
+    public Stage getPrimaryStage(){
+        return primaryStage;
+    }
+
+    public void setPrimaryStage(Stage primaryStage){
+        this.primaryStage = primaryStage;
+    }
+
+    public AnimationTimer getTimer(){
+        return timer;
+    }
+
+    public void setTimer(AnimationTimer timer){
+        this.timer = timer;
+    }
+
+    public Scene getScene(){
+        return scene;
+    }
+
+    public void setScene(Scene scene){
+        this.scene = scene;
     }
 }

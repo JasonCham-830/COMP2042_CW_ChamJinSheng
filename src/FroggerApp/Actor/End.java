@@ -3,7 +3,7 @@ package FroggerApp.Actor;
 import javafx.scene.image.Image;
 
 public class End extends Actor{
-	boolean activated = false;
+	private boolean activated = false;
 	@Override
 	public void act(long now) {
 		// TODO Auto-generated method st
