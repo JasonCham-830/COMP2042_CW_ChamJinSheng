@@ -2,11 +2,11 @@ package FroggerApp.Game_Scene;
 
 import javafx.scene.Scene;
 
-public class GameScene_Controller {
-    private GameScene_View view;
-    private GameScene_Model model;
+public class gameScene_Controller {
+    private gameScene_View view;
+    private gameScene_Model model;
 
-    public GameScene_Controller(GameScene_Model model, GameScene_View view){
+    public gameScene_Controller(gameScene_Model model, gameScene_View view){
         this.model = model;
         this.view = view;
     }
@@ -22,6 +22,7 @@ public class GameScene_Controller {
     public void setScene(Scene scene){
         model.setScene(scene);
     }
+
 
     public void runGameScene() throws Exception {
         view.gameStart(model.getPrimaryStage(),model.getBackground(),model.getAnimal(),model.getScene());

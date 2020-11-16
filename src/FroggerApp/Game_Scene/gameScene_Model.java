@@ -8,15 +8,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-public class GameScene_Model {
+public class gameScene_Model {
 
     private Stage primaryStage;
     private AnimationTimer timer;
     private MyStage background;
     private Animal animal;
-    private Scene scene;
+    private static Scene scene;
 
-    public GameScene_Model(Stage primaryStage){
+    public gameScene_Model(Stage primaryStage){
         this.primaryStage = primaryStage;
         background = new MyStage();
         this.scene  = new Scene(background,600,800);
@@ -98,7 +98,7 @@ public class GameScene_Model {
         this.timer = timer;
     }
 
-    public Scene getScene(){
+    public static Scene getScene(){
         return scene;
     }
 
