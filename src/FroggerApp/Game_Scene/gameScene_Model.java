@@ -70,33 +70,33 @@ public class gameScene_Model {
         return background;
     }
 
-    public void setBackground(MyStage background){
-        this.background = background;
-    }
+//    public void setBackground(MyStage background){
+//        this.background = background;
+//    }
 
     public Animal getAnimal(){
         return animal;
     }
 
-    public void setAnimal(Animal animal){
-        this.animal = animal;
-    }
+//    public void setAnimal(Animal animal){
+//        this.animal = animal;
+//    }
 
     public Stage getPrimaryStage(){
         return primaryStage;
     }
 
-    public void setPrimaryStage(Stage primaryStage){
-        this.primaryStage = primaryStage;
-    }
-
-    public AnimationTimer getTimer(){
-        return timer;
-    }
-
-    public void setTimer(AnimationTimer timer){
-        this.timer = timer;
-    }
+//    public void setPrimaryStage(Stage primaryStage){
+//        this.primaryStage = primaryStage;
+//    }
+//
+//    public AnimationTimer getTimer(){
+//        return timer;
+//    }
+//
+//    public void setTimer(AnimationTimer timer){
+//        this.timer = timer;
+//    }
 
     public static Scene getScene(){
         return scene;

@@ -17,39 +17,17 @@ import javafx.stage.Stage;
 
 
 public class infoScene_View {
-    private Stage infoStage;
 
-    public infoScene_View(Stage infoStage){
-        this.infoStage = infoStage;
-    }
+    public infoScene_View(){}
 
-    public void infoStart() throws Exception{
+    public void infoStart(Stage infoStage,Group root, Scene scene,Button startButton) throws Exception{
 
+        root.getChildren().add(new BackgroundImage("file:src/FroggerApp/Images_File/infoPage.png"));
 
-        Group root = new Group();
-
-        BackgroundImage infoBackground = new BackgroundImage("file:src/FroggerApp/Images_File/infoPage.png");
-        root.getChildren().add(infoBackground);
-
-        Button startButton = new Button("Start game");
+        root.getChildren().add(startButton);
         startButton.setLayoutX(500);
         startButton.setLayoutY(700);
-        root.getChildren().add(startButton);
-        startButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                gameScene_View view = new gameScene_View();
-                gameScene_Model model = new gameScene_Model(infoStage);
-                gameScene_Controller controller= new gameScene_Controller(model,view);
-                try {
-                    controller.runGameScene();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
-        Scene scene = new Scene(root,600,800, Color.BLACK);
         infoStage.setScene(scene);
         infoStage.show();
 

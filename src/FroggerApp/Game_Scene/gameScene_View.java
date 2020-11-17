@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class gameScene_View {
 
-    public gameScene_View() {};
+    public gameScene_View() {}
 
     public void gameStart(Stage primaryStage, MyStage background, Animal animal,Scene scene) throws Exception {
 

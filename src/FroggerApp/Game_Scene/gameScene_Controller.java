@@ -11,9 +11,6 @@ public class gameScene_Controller {
         this.view = view;
     }
 
-//    public GameScene_Model getModel(){
-//        return model;
-//    }
 
     public Scene getScene(){
         return model.getScene();

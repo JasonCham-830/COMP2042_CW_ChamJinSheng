@@ -4,6 +4,8 @@ import FroggerApp.Actor.BackgroundImage;
 import FroggerApp.Game_Scene.gameScene_Controller;
 import FroggerApp.Game_Scene.gameScene_Model;
 import FroggerApp.Game_Scene.gameScene_View;
+import FroggerApp.Info_Scene.infoScene_Controller;
+import FroggerApp.Info_Scene.infoScene_Model;
 import FroggerApp.Info_Scene.infoScene_View;
 import FroggerApp.World.MyStage;
 
@@ -77,9 +79,11 @@ public class menuScene_View extends Parent {
         infoButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                infoScene_View view = new infoScene_View(menuStage);
+                infoScene_View view = new infoScene_View();
+                infoScene_Model model = new infoScene_Model(menuStage);
+                infoScene_Controller controller = new infoScene_Controller(view,model);
                 try {
-                    view.infoStart();
+                    controller.runInfoScene();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
