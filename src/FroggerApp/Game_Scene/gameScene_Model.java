@@ -2,11 +2,17 @@ package FroggerApp.Game_Scene;
 
 import FroggerApp.Actor.Animal;
 import FroggerApp.Actor.Digit;
+import FroggerApp.FileForScore.scoreFile;
 import FroggerApp.World.MyStage;
 import javafx.animation.AnimationTimer;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class gameScene_Model {
 
@@ -45,14 +51,32 @@ public class gameScene_Model {
                     background.stopMusic();
                     stop();
                     background.stop();
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("You Have Won The Game!");
-                    alert.setHeaderText("Your High Score: " + animal.getPoints() + "!");
-                    alert.setContentText("Highest Possible Score: 800");
-                    alert.show();
+                    //
+
+                    ArrayList list = scoreFile.sortFile(animal.getPoints());
+                    popUp(list);
+
+//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                    alert.setTitle("You Have Won The Game!");
+//                    alert.setHeaderText("Your High Score: " + animal.getPoints() + "!");
+//                    alert.setContentText("Highest Possible Score:800");
+//                    alert.show();
                 }
             }
         };
+    }
+
+    public void popUp(ArrayList<Integer> list){
+
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("You Have Won The Game!");
+        alert.setHeaderText("Your High Score: " + animal.getPoints() + "!");
+        alert.setContentText(Integer.toString(list.get(0)));
+        String highScoreContent = String.format("Highscore\n1. " + list.get(0) + "\n2. " + list.get(1) + "\n3. " + list.get(2) + "\n4. " + list.get(3) + "\n5. " + list.get(4));
+        alert.setContentText(highScoreContent);
+        alert.show();
+       // popup.show(primaryStage);
     }
 
     public void setNumber(int n) {

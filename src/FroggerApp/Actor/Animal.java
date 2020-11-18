@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javafx.event.EventHandler;
 
+import javafx.scene.Node;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -246,8 +247,9 @@ public class Animal extends Actor {
 			//setY(679.8+movement);
 		}
 	}
+	//set hw many frog
 	public boolean getStop() {
-		return end==5;
+		return end==1;
 	}
 	
 	public int getPoints() {
