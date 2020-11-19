@@ -4,12 +4,10 @@ import FroggerApp.Actor.Animal;
 import FroggerApp.Actor.Digit;
 import FroggerApp.FileForScore.scoreFile;
 import FroggerApp.World.MyStage;
+
 import javafx.animation.AnimationTimer;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -55,12 +53,6 @@ public class gameScene_Model {
 
                     ArrayList list = scoreFile.sortFile(animal.getPoints());
                     popUp(list);
-
-//                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                    alert.setTitle("You Have Won The Game!");
-//                    alert.setHeaderText("Your High Score: " + animal.getPoints() + "!");
-//                    alert.setContentText("Highest Possible Score:800");
-//                    alert.show();
                 }
             }
         };
@@ -76,7 +68,6 @@ public class gameScene_Model {
         String highScoreContent = String.format("Highscore\n1. " + list.get(0) + "\n2. " + list.get(1) + "\n3. " + list.get(2) + "\n4. " + list.get(3) + "\n5. " + list.get(4));
         alert.setContentText(highScoreContent);
         alert.show();
-       // popup.show(primaryStage);
     }
 
     public void setNumber(int n) {
@@ -94,33 +85,13 @@ public class gameScene_Model {
         return background;
     }
 
-//    public void setBackground(MyStage background){
-//        this.background = background;
-//    }
-
     public Animal getAnimal(){
         return animal;
     }
 
-//    public void setAnimal(Animal animal){
-//        this.animal = animal;
-//    }
-
     public Stage getPrimaryStage(){
         return primaryStage;
     }
-
-//    public void setPrimaryStage(Stage primaryStage){
-//        this.primaryStage = primaryStage;
-//    }
-//
-//    public AnimationTimer getTimer(){
-//        return timer;
-//    }
-//
-//    public void setTimer(AnimationTimer timer){
-//        this.timer = timer;
-//    }
 
     public static Scene getScene(){
         return scene;

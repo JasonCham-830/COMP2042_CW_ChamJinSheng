@@ -5,9 +5,12 @@ import FroggerApp.Actor.BackgroundImage;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+
+import javax.swing.text.html.ImageView;
 
 
 public class menuScene_View extends Parent {
@@ -22,24 +25,28 @@ public class menuScene_View extends Parent {
 
         //Background Image
 
-        group.getChildren().add(new BackgroundImage("file:src/FroggerApp/Images_File/BackgroundImage.jpg"));
-
-        //Title text
-        Text titleText = new Text("Welcome to Frogger Arcade Game!");
-        group.getChildren().add(titleText);
-        titleText.setLayoutX(205);
-        titleText.setLayoutY(200);
+        group.getChildren().add(new BackgroundImage("file:src/FroggerApp/Images_File/mainMenu.png"));
+        scene.getStylesheets().add("file:src/FroggerApp/Menu_Scene/stylesheet.css");
 
         //start button
         group.getChildren().add(startButton);
-        startButton.setLayoutX(265);
-        startButton.setLayoutY(500);
-
+        startButton.setLayoutX(195);
+        startButton.setLayoutY(450);
+        BackgroundImage startImg = new BackgroundImage("file:src/FroggerApp/Images_File/startButton.png");
+        startImg.setFitHeight(50);
+        startImg.setFitWidth(200);
+        startButton.setGraphic(startImg);
+        //group.getStylesheets().add("src/Menu_Scene/stylesheet.css");
         //info button
 
         group.getChildren().add(infoButton);
-        infoButton.setLayoutX(265);
-        infoButton.setLayoutY(570);
+        infoButton.setLayoutX(188);
+        infoButton.setLayoutY(520);
+        BackgroundImage infoImg = new BackgroundImage("file:src/FroggerApp/Images_File/infoButton.png");
+        infoImg.setFitHeight(50);
+        infoImg.setFitWidth(200);
+        infoButton.setGraphic(infoImg);
+
 
 
         // set the scene

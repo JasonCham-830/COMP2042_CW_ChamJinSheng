@@ -6,6 +6,7 @@ import FroggerApp.Game_Scene.gameScene_View;
 import FroggerApp.Info_Scene.infoScene_Controller;
 import FroggerApp.Info_Scene.infoScene_Model;
 import FroggerApp.Info_Scene.infoScene_View;
+import FroggerApp.World.MyStage;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,13 +23,16 @@ public class menuScene_Model {
     private Group root;
     private Button startButton;
     private Button infoButton;
+    private MyStage background;
 
     public menuScene_Model(Stage menuStage){
         this.menuStage = menuStage;
         root = new Group();
         this.scene = new Scene(root, 600, 800);
-        startButton = new Button("Start game");
-        infoButton = new Button("Game Info");
+        startButton = new Button();
+        infoButton = new Button();
+        background = new MyStage();
+        background.playMusic();
     }
 
     public Button getStartButton(){
