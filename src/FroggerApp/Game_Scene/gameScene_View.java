@@ -2,7 +2,6 @@ package FroggerApp.Game_Scene;
 
 import FroggerApp.Actor.*;
 import FroggerApp.World.MyStage;
-import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 

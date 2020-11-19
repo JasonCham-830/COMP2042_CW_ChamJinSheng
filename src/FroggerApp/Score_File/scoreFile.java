@@ -1,8 +1,4 @@
-package FroggerApp.FileForScore;
-
-import javafx.scene.control.Label;
-import javafx.stage.Popup;
-import javafx.stage.Stage;
+package FroggerApp.Score_File;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +17,6 @@ public class scoreFile {
 
         try {
             Scanner scanner = new Scanner(new File("src/FroggerApp/FileForScore/scoreOutput.txt"));
-            System.out.println(point);
 
             while(scanner.hasNextInt()){
                 lines.add(scanner.nextInt());
@@ -40,7 +35,6 @@ public class scoreFile {
             writer = new BufferedWriter(new FileWriter("src/FroggerApp/FileForScore/scoreOutput.txt"));
 
             for (int line : linesRd) {
-                System.out.println(line);
                 writer.write(Integer.toString(line));
                 writer.newLine();
             }
