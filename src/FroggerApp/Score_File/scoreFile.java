@@ -16,7 +16,7 @@ public class scoreFile {
         ArrayList<Integer> linesRd = new ArrayList<Integer>();
 
         try {
-            Scanner scanner = new Scanner(new File("src/FroggerApp/FileForScore/scoreOutput.txt"));
+            Scanner scanner = new Scanner(new File("src/FroggerApp/Score_File/scoreOutput.txt"));
 
             while(scanner.hasNextInt()){
                 lines.add(scanner.nextInt());
@@ -32,7 +32,7 @@ public class scoreFile {
                 }
             }
 
-            writer = new BufferedWriter(new FileWriter("src/FroggerApp/FileForScore/scoreOutput.txt"));
+            writer = new BufferedWriter(new FileWriter("src/FroggerApp/Score_File/scoreOutput.txt"));
 
             for (int line : linesRd) {
                 writer.write(Integer.toString(line));

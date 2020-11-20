@@ -23,7 +23,6 @@ public class menuScene_Model {
     private Group root;
     private Button startButton;
     private Button infoButton;
-    private MyStage background;
 
     public menuScene_Model(Stage menuStage){
         this.menuStage = menuStage;
@@ -31,8 +30,6 @@ public class menuScene_Model {
         this.scene = new Scene(root, 600, 800);
         startButton = new Button();
         infoButton = new Button();
-        background = new MyStage();
-        background.playMusic();
     }
 
     public Button getStartButton(){
