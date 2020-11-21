@@ -6,21 +6,24 @@ public class Turtle extends Actor{
 	private Image turtle1;
 	private Image turtle2;
 	private Image turtle3;
+
+	private int time = 900000000;
+	private int counter = 3;
 	private int speed;
-	private int i = 1;
-	private boolean bool = true;
+//	private int i = 1;
+//	private boolean bool = true;
 	@Override
 	public void act(long now) {
 
-				if (now/900000000  % 3 ==0) {
+				if (now/time  % counter == 0) {
 					setImage(turtle2);
 					
 				}
-				else if (now/900000000 % 3 == 1) {
+				else if (now/time % counter == 1) {
 					setImage(turtle1);
 					
 				}
-				else if (now/900000000 %3 == 2) {
+				else if (now/time % counter == 2) {
 					setImage(turtle3);
 					
 				}

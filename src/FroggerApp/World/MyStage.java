@@ -12,20 +12,7 @@ public class MyStage extends World{
 		
 	}
 	
-	public MyStage() {
-		
-//		mediaPlayer.play();
-//		mediaPlayer.setOnEndOfMedia(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				mediaPlayer.seek(Duration.ZERO);
-//				
-//			}
-//			
-//		});
-//		mediaPlayer.play();
-	}
+	public MyStage() {}
 	
 	public void playMusic() {
 		String musicFile = "src/FroggerApp/Audio_File/Frogger Main Song Theme (loop).mp3";

@@ -3,30 +3,34 @@ package FroggerApp.Actor;
 import javafx.scene.image.Image;
 
 public class WetTurtle extends Actor{
+
 	private Image turtle1;
 	private Image turtle2;
 	private Image turtle3;
 	private Image turtle4;
+
+	private int time = 900000000;
+	private int counter = 4;
 	private int speed;
-	private int i = 1;
-	boolean bool = true;
-	boolean sunk = false;
+	
+	private boolean sunk = false;
+
 	@Override
 	public void act(long now) {
 
-				if (now/900000000  % 4 ==0) {
+				if (now/time  % counter == 0) {
 					setImage(turtle2);
 					sunk = false;
 					
 				}
-				else if (now/900000000 % 4 == 1) {
+				else if (now/time % counter == 1) {
 					setImage(turtle1);
 					sunk = false;
 				}
-				else if (now/900000000 %4 == 2) {
+				else if (now/time % counter == 2) {
 					setImage(turtle3);
 					sunk = false;
-				} else if (now/900000000 %4 == 3) {
+				} else if (now/time % counter == 3) {
 					setImage(turtle4);
 					sunk = true;
 				}

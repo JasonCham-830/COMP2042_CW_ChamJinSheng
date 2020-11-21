@@ -11,14 +11,7 @@ import javafx.scene.input.KeyEvent;
 
 
 public class Animal extends Actor {
-	private Image imgW1;
-	private Image imgA1;
-	private Image imgS1;
-	private Image imgD1;
-	private Image imgW2;
-	private Image imgA2;
-	private Image imgS2;
-	private Image imgD2;
+
 	private int points = 0;
 	private int end = 0;
 	private boolean second = false;
@@ -32,64 +25,67 @@ public class Animal extends Actor {
 	private boolean changeScore = false;
 	private int carD = 0;
 	private double w = 800;
+
 	ArrayList<End> inter = new ArrayList<End>();
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
 		setY(679.8+movement);
-		imgW1 = new Image("file:src/FroggerApp/Images_File/froggerUp.png", imgSize, imgSize, true, true);
-		imgA1 = new Image("file:src/FroggerApp/Images_File/froggerLeft.png", imgSize, imgSize, true, true);
-		imgS1 = new Image("file:src/FroggerApp/Images_File/froggerDown.png", imgSize, imgSize, true, true);
-		imgD1 = new Image("file:src/FroggerApp/Images_File/froggerRight.png", imgSize, imgSize, true, true);
-		imgW2 = new Image("file:src/FroggerApp/Images_File/froggerUpJump.png", imgSize, imgSize, true, true);
-		imgA2 = new Image("file:src/FroggerApp/Images_File/froggerLeftJump.png", imgSize, imgSize, true, true);
-		imgS2 = new Image("file:src/FroggerApp/Images_File/froggerDownJump.png", imgSize, imgSize, true, true);
-		imgD2 = new Image("file:src/FroggerApp/Images_File/froggerRightJump.png", imgSize, imgSize, true, true);
+
+		Image imgW1 = new Image("file:src/FroggerApp/Images_File/froggerUp.png", imgSize, imgSize, true, true);
+		Image imgA1 = new Image("file:src/FroggerApp/Images_File/froggerLeft.png", imgSize, imgSize, true, true);
+		Image imgS1 = new Image("file:src/FroggerApp/Images_File/froggerDown.png", imgSize, imgSize, true, true);
+		Image imgD1 = new Image("file:src/FroggerApp/Images_File/froggerRight.png", imgSize, imgSize, true, true);
+		Image imgW2 = new Image("file:src/FroggerApp/Images_File/froggerUpJump.png", imgSize, imgSize, true, true);
+		Image imgA2 = new Image("file:src/FroggerApp/Images_File/froggerLeftJump.png", imgSize, imgSize, true, true);
+		Image imgS2 = new Image("file:src/FroggerApp/Images_File/froggerDownJump.png", imgSize, imgSize, true, true);
+		Image imgD2 = new Image("file:src/FroggerApp/Images_File/froggerRightJump.png", imgSize, imgSize, true, true);
+
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event){
+			public void handle(KeyEvent FrogImgEvent){
 				if (noMove) {
 					
 				}
 				else {
 				if (second) {
-					if (event.getCode() == KeyCode.W) {	  
+					if (FrogImgEvent.getCode() == KeyCode.W) {
 		                move(0, -movement);
 		                changeScore = false;
 		                setImage(imgW1);
 		                second = false;
 		            }
-		            else if (event.getCode() == KeyCode.A) {	            	
+		            else if (FrogImgEvent.getCode() == KeyCode.A) {
 		            	 move(-movementX, 0);
 		            	 setImage(imgA1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.S) {	            	
+		            else if (FrogImgEvent.getCode() == KeyCode.S) {
 		            	 move(0, movement);
 		            	 setImage(imgS1);
 		            	 second = false;
 		            }
-		            else if (event.getCode() == KeyCode.D) {	            	
+		            else if (FrogImgEvent.getCode() == KeyCode.D) {
 		            	 move(movementX, 0);
 		            	 setImage(imgD1);
 		            	 second = false;
 		            }
 				}
-				else if (event.getCode() == KeyCode.W) {	            	
+				else if (FrogImgEvent.getCode() == KeyCode.W) {
 	                move(0, -movement);
 	                setImage(imgW2);
 	                second = true;
 	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
+	            else if (FrogImgEvent.getCode() == KeyCode.A) {
 	            	 move(-movementX, 0);
 	            	 setImage(imgA2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
+	            else if (FrogImgEvent.getCode() == KeyCode.S) {
 	            	 move(0, movement);
 	            	 setImage(imgS2);
 	            	 second = true;
 	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
+	            else if (FrogImgEvent.getCode() == KeyCode.D) {
 	            	 move(movementX, 0);
 	            	 setImage(imgD2);
 	            	 second = true;
@@ -98,10 +94,10 @@ public class Animal extends Actor {
 			}
 		});	
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
-			public void handle(KeyEvent event) {
+			public void handle(KeyEvent FrogMoveScoreEvent) {
 				if (noMove) {}
 				else {
-				if (event.getCode() == KeyCode.W) {	  
+				if (FrogMoveScoreEvent.getCode() == KeyCode.W) {
 					if (getY() < w) {
 						changeScore = true;
 						w = getY();
@@ -111,17 +107,17 @@ public class Animal extends Actor {
 	                setImage(imgW1);
 	                second = false;
 	            }
-	            else if (event.getCode() == KeyCode.A) {	            	
+	            else if (FrogMoveScoreEvent.getCode() == KeyCode.A) {
 	            	 move(-movementX, 0);
 	            	 setImage(imgA1);
 	            	 second = false;
 	            }
-	            else if (event.getCode() == KeyCode.S) {	            	
+	            else if (FrogMoveScoreEvent.getCode() == KeyCode.S) {
 	            	 move(0, movement);
 	            	 setImage(imgS1);
 	            	 second = false;
 	            }
-	            else if (event.getCode() == KeyCode.D) {	            	
+	            else if (FrogMoveScoreEvent.getCode() == KeyCode.D) {
 	            	 move(movementX, 0);
 	            	 setImage(imgD1);
 	            	 second = false;
@@ -134,7 +130,7 @@ public class Animal extends Actor {
 	
 	@Override
 	public void act(long now) {
-		int bounds = 0;
+
 		if (getY()<0 || getY()>734) {
 			setX(300);
 			setY(679.8+movement);
@@ -243,13 +239,11 @@ public class Animal extends Actor {
 		}
 		else if (getY()<413){
 			waterDeath = true;
-			//setX(300);
-			//setY(679.8+movement);
 		}
 	}
 	//set hw many frog
 	public boolean getStop() {
-		return end==1;
+		return end==5;
 	}
 	
 	public int getPoints() {
