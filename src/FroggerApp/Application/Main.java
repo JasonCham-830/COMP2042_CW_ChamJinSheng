@@ -8,12 +8,19 @@ import javafx.stage.Stage;
 
 public class Main extends Application{
 
-
+	/**
+	 * Main application
+	 * @param args launch the arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 
-
+	/**
+	 *Start method to start the application
+	 * @param primaryStage Stage for application
+	 * @throws Exception
+	 */
 	public void start(Stage primaryStage) throws Exception {
 
 		menuScene_View view = new menuScene_View();

@@ -5,10 +5,24 @@ import FroggerApp.World.MyStage;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
+/**
+ * Game Scene View
+ */
 public class gameScene_View {
 
+        /**
+         * Empty constructor
+         */
     public gameScene_View() {}
+
+        /**
+         * Display background, images and start the application
+         * @param primaryStage Stage for game scene
+         * @param background Background scene for images, music
+         * @param animal Use to declare frog character
+         * @param scene Scene for stage
+         * @throws Exception
+         */
 
     public void gameStart(Stage primaryStage, MyStage background, Animal animal,Scene scene) throws Exception {
 

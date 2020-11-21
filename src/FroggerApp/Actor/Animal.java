@@ -9,24 +9,33 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-
+/**
+ * Animal class
+ */
 public class Animal extends Actor {
 
 	private int points = 0;
 	private int end = 0;
-	private boolean second = false;
-	private boolean noMove = false;
+	private int imgSize = 40;
+	private int carD = 0;
+
 	private double movement = 13.3333333*2;
 	private double movementX = 10.666666*2;
-	private int imgSize = 40;
-	private boolean carDeath = false;
-	private boolean waterDeath = false;
-	private boolean stop = false;
-	private boolean changeScore = false;
-	private int carD = 0;
 	private double w = 800;
 
+	private boolean second = false;
+	private boolean noMove = false;
+	private boolean carDeath = false;
+	private boolean waterDeath = false;
+	private boolean changeScore = false;
+	private boolean stop = false;
+
 	ArrayList<End> inter = new ArrayList<End>();
+
+	/**
+	 * Animal Constructor to set parameters for frog in game scene
+	 * @param imageLink imageLink for frog images during game scene
+	 */
 	public Animal(String imageLink) {
 		setImage(new Image(imageLink, imgSize, imgSize, true, true));
 		setX(300);
@@ -41,10 +50,14 @@ public class Animal extends Actor {
 		Image imgS2 = new Image("file:src/FroggerApp/Images_File/froggerDownJump.png", imgSize, imgSize, true, true);
 		Image imgD2 = new Image("file:src/FroggerApp/Images_File/froggerRightJump.png", imgSize, imgSize, true, true);
 
+
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
+			/**
+			 * Handle class to handle event for frog during movements
+			 * @param FrogImgEvent Every event for frog in game scene
+			 */
 			public void handle(KeyEvent FrogImgEvent){
 				if (noMove) {
-					
 				}
 				else {
 				if (second) {
@@ -94,6 +107,10 @@ public class Animal extends Actor {
 			}
 		});	
 		setOnKeyReleased(new EventHandler<KeyEvent>() {
+			/**
+			 * Handle event to track score when frog makes a move
+			 * @param FrogMoveScoreEvent Event to calculate score after frog's every movement
+			 */
 			public void handle(KeyEvent FrogMoveScoreEvent) {
 				if (noMove) {}
 				else {
@@ -127,7 +144,11 @@ public class Animal extends Actor {
 			
 		});
 	}
-	
+
+	/**
+	 * Act method to set current frog's condition (Either live or dead)
+	 * @param now Current position of objects
+	 */
 	@Override
 	public void act(long now) {
 
@@ -241,23 +262,31 @@ public class Animal extends Actor {
 			waterDeath = true;
 		}
 	}
-	//set hw many frog
+	/**
+	 * getStop method to get minimum number of frogs to enter coves to win the game
+	 * @return
+	 */
 	public boolean getStop() {
 		return end==5;
 	}
-	
+
+	/**
+	 * getPoints method to get the point after game ends
+	 * @return
+	 */
 	public int getPoints() {
 		return points;
 	}
-	
+
+	/**
+	 * changeScore method to change the score in the scoreboard
+	 * @return true when score is same with scoreboard, false when score is different with scoreboard
+	 */
 	public boolean changeScore() {
 		if (changeScore) {
 			changeScore = false;
 			return true;
 		}
 		return false;
-		
 	}
-	
-
 }

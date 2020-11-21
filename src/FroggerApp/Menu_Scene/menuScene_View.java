@@ -5,21 +5,30 @@ import FroggerApp.Actor.BackgroundImage;
 import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
-import javax.swing.text.html.ImageView;
-
-
+/**
+ * MenuScene View class
+ */
 public class menuScene_View extends Parent {
 
+    /**
+     * Empty constructor
+     */
     public menuScene_View(){
     }
 
+    /**
+     * InfoStart method to set up the info stage
+     * @param menuStage Stage for menu scene
+     * @param group Group for menu scene
+     * @param scene Scene for menu scene
+     * @param startButton StartButton for menu scene
+     * @param infoButton InfoButton for menu scene
+     * @throws Exception
+     */
     public void menuStart(Stage menuStage, Group group, Scene scene, Button startButton, Button infoButton ) throws Exception{
-
 
         menuStage.setTitle("Frogger Arcade Application");
 

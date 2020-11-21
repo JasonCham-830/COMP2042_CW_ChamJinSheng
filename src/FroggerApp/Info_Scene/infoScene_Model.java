@@ -10,7 +10,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-
+/**
+ * InfoScene Model
+ */
 public class infoScene_Model {
 
     private Stage infoStage;
@@ -18,6 +20,10 @@ public class infoScene_Model {
     private Button startButton;
     private Group root;
 
+    /**
+     * InfoScene_Model constructor
+     * @param infoStage Stage for infoScene
+     */
     public infoScene_Model(Stage infoStage){
         this.infoStage = infoStage;
         root = new Group();
@@ -25,10 +31,18 @@ public class infoScene_Model {
         startButton = new Button("Start game");
     }
 
+    /**
+     * getButton method to getStartButton
+     * @return startButton
+     */
     public Button getButton(){
         return startButton;
     }
 
+    /**
+     * setButton method to set button functions that link to Game Scene
+     * @param startButton startButton
+     */
     public void setButton(Button startButton){
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -45,26 +59,50 @@ public class infoScene_Model {
         });
     }
 
+    /**
+     * getScene method to get scene
+     * @return scene(Scene)
+     */
     public Scene getScene(){
         return scene;
     }
 
+    /**
+     * setScene method to set current info scene
+     * @param scene Current info scene
+     */
     public void setScene(Scene scene){
         this.scene = scene;
     }
 
+    /**
+     * getRoot method to get root
+     * @return root
+     */
     public Group getRoot(){
         return root;
     }
 
+    /**
+     * setRoot method to set current root in info scene
+     * @param root root(Group)
+     */
     public void setRoot(Group root){
         this.root = root;
     }
 
+    /**
+     * getInfoStage method to get stage
+     * @return infoStage
+     */
     public Stage getInfoStage(){
         return infoStage;
     }
 
+    /**
+     * setInfoStage method to set current info stage
+     * @param infoStage Current info stage
+     */
     public void setInfoStage(Stage infoStage){
         this.infoStage = infoStage;
     }

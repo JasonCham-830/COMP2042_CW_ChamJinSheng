@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/**
+ * Game scene model
+ */
 public class gameScene_Model {
 
     private Stage primaryStage;
@@ -24,6 +27,10 @@ public class gameScene_Model {
     private Animal animal;
     private static Scene scene;
 
+    /**
+     * Game Scene model constructor
+     * @param primaryStage Stage passed by menu scene
+     */
     public gameScene_Model(Stage primaryStage){
         this.primaryStage = primaryStage;
         background = new MyStage();
@@ -31,16 +38,25 @@ public class gameScene_Model {
         animal = new Animal("file:src/FroggerApp/Images_File/froggerUp.png");
     };
 
+    /**
+     * Method to start the animation, music and timer
+     */
     public void start() {
         background.playMusic();
         createTimer();
         timer.start();
     }
 
+    /**
+     * Method to stop the timer
+     */
     public void stop() {
         timer.stop();
     }
 
+    /**
+     * Method used to change score in scoreboard and stop game when 5 frogs are in the coves
+     */
     public void createTimer() {
         timer = new AnimationTimer() {
             @Override
@@ -53,7 +69,6 @@ public class gameScene_Model {
                     background.stopMusic();
                     stop();
                     background.stop();
-                    //
 
                     ArrayList list = scoreFile.sortFile(animal.getPoints());
                     popUp(list);
@@ -62,8 +77,11 @@ public class gameScene_Model {
         };
     }
 
+    /**
+     * Method for pop up screen when player win the game
+     * @param list A list of score from scoreFile to display at the pop up
+     */
     public void popUp(ArrayList<Integer> list){
-
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
@@ -97,6 +115,10 @@ public class gameScene_Model {
         alert.show();
     }
 
+    /**
+     * Method used to set number in the scoreboard
+     * @param n - current point in the game
+     */
     public void setNumber(int n) {
         int shift = 0;
         while (n > 0) {
@@ -108,22 +130,42 @@ public class gameScene_Model {
         }
     }
 
+    /**
+     * Method to getBackground
+     * @return background(MyStage)
+     */
     public MyStage getBackground(){
         return background;
     }
 
+    /**
+     * Method to getAnimal
+     * @return animal(Animal)
+     */
     public Animal getAnimal(){
         return animal;
     }
 
+    /**
+     * Method to getPrimaryStage
+     * @return primaryStage(Stage)
+     */
     public Stage getPrimaryStage(){
         return primaryStage;
     }
 
+    /**
+     * Method to return getScene
+     * @return scene(Scene)
+     */
     public static Scene getScene(){
         return scene;
     }
 
+    /**
+     * Method to set current scene
+     * @param scene - Current scene
+     */
     public void setScene(Scene scene){
         this.scene = scene;
     }

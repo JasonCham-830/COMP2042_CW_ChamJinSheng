@@ -15,11 +15,24 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-
+/**
+ * InfoScene_View class
+ */
 public class infoScene_View {
 
+    /**
+     * Empty constructor
+     */
     public infoScene_View(){}
 
+    /**
+     * InfoStart method to set up the info stage
+     * @param infoStage Stage for info scene
+     * @param root Root for info scene
+     * @param scene Scene for info scene
+     * @param startButton StartButton in info scene
+     * @throws Exception
+     */
     public void infoStart(Stage infoStage,Group root, Scene scene,Button startButton) throws Exception{
 
         scene.getStylesheets().add("file:src/FroggerApp/Menu_Scene/stylesheet.css");

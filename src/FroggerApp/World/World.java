@@ -15,14 +15,21 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 
 
+/**
+ * World abstarct class
+ */
 public abstract class World extends Pane {
     private AnimationTimer timer;
-    
-    public World() {
+
+	/**
+	 * World constructor to handle events of game
+	 */
+	public World() {
     	
     	sceneProperty().addListener(new ChangeListener<Scene>() {
 
 			@Override
+
 			public void changed(ObservableValue<? extends Scene> observable, Scene oldValue, Scene newValue) {
 				if (newValue != null) {
 					newValue.setOnKeyReleased(new EventHandler<KeyEvent>() {
@@ -63,7 +70,10 @@ public abstract class World extends Pane {
 		});
     }
 
-    public void createTimer() {
+	/**
+	 * createTimer method to generate a timer during game scene for animation purpose
+	 */
+	public void createTimer() {
         timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
@@ -78,19 +88,35 @@ public abstract class World extends Pane {
         };
     }
 
-    public void start() {
+	/**
+	 * start method to start the timer
+	 */
+	public void start() {
     	createTimer();
         timer.start();
     }
 
+    /**
+	 * stop method to stop the timer
+     */
     public void stop() {
         timer.stop();
     }
-    
-    public void add(Actor actor) {
+
+	/**
+	 * add method to add each actor in game scene
+	 * @param actor Any actors that appears in game scene
+	 */
+	public void add(Actor actor) {
         getChildren().add(actor);
     }
 
+	/**
+	 * Find the location of actors and store it in array
+	 * @param cls Actor class
+	 * @param <A> Actor
+	 * @return Array containing actors in world
+	 */
     public <A extends Actor> List<A> getObjects(Class<A> cls) {
         ArrayList<A> someArray = new ArrayList<A>();
         for (Node n: getChildren()) {
@@ -101,5 +127,9 @@ public abstract class World extends Pane {
         return someArray;
     }
 
-    public abstract void act(long now);
+	/**
+	 * Abstract method act
+	 * @param now Current time
+	 */
+	public abstract void act(long now);
 }

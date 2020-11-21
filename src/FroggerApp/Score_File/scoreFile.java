@@ -5,9 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * ScoreFile class
+ */
 public class scoreFile {
 
-
+    /**
+     * sortFile method to sort the scores in text file in descending order
+     * @param point Point after user end game
+     * @return linesRd - New ArrayList after sorted and remove duplicates
+     */
     public static ArrayList sortFile(int point) {
 
         BufferedReader reader = null;
