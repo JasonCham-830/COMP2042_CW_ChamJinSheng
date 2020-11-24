@@ -5,7 +5,6 @@
     -fx-background-color: transparent;
 }
 
-
 .button:hover {
 	-fx-rotate:2;
 }

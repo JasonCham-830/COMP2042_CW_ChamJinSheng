@@ -14,12 +14,16 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * Game scene model
  */
+
+
 public class gameScene_Model {
+
 
     private Stage primaryStage;
     private AnimationTimer timer;
@@ -27,6 +31,8 @@ public class gameScene_Model {
     private Animal animal;
     private static Scene scene;
 
+
+    public gameScene_Model(){}
     /**
      * Game Scene model constructor
      * @param primaryStage Stage passed by menu scene
@@ -70,7 +76,12 @@ public class gameScene_Model {
                     stop();
                     background.stop();
 
-                    ArrayList list = scoreFile.sortFile(animal.getPoints());
+                    ArrayList list = null;
+                    try {
+                        list = scoreFile.sortFile(animal.getPoints());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     popUp(list);
                 }
             }
@@ -120,13 +131,17 @@ public class gameScene_Model {
      * @param n - current point in the game
      */
     public void setNumber(int n) {
-        int shift = 0;
-        while (n > 0) {
-            int d = n / 10;
-            int k = n - d * 10;
-            n = d;
-            background.add(new Digit(k, 30, 360 - shift, 25));
-            shift+=30;
+        if(n<0){
+            throw new ArithmeticException("Negative Score is not allowed");
+        }else{
+            int shift = 0;
+            while (n > 0) {
+                int d = n / 10;
+                int k = n - d * 10;
+                n = d;
+                background.add(new Digit(k, 30, 360 - shift, 25));
+                shift += 30;
+            }
         }
     }
 

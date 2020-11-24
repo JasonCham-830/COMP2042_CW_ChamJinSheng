@@ -15,7 +15,12 @@ public class scoreFile {
      * @param point Point after user end game
      * @return linesRd - New ArrayList after sorted and remove duplicates
      */
-    public static ArrayList sortFile(int point) {
+    public static ArrayList sortFile(int point) throws IOException {
+
+        File file = new File ("src/FroggerApp/Score_File/scoreOutput.txt");
+        if(file.createNewFile()){
+            System.out.println("File has been created");
+        }
 
         BufferedReader reader = null;
         BufferedWriter writer = null;
@@ -23,7 +28,7 @@ public class scoreFile {
         ArrayList<Integer> linesRd = new ArrayList<Integer>();
 
         try {
-            Scanner scanner = new Scanner(new File("src/FroggerApp/Score_File/scoreOutput.txt"));
+            Scanner scanner = new Scanner(file);
 
             while(scanner.hasNextInt()){
                 lines.add(scanner.nextInt());
@@ -39,7 +44,7 @@ public class scoreFile {
                 }
             }
 
-            writer = new BufferedWriter(new FileWriter("src/FroggerApp/Score_File/scoreOutput.txt"));
+            writer = new BufferedWriter(new FileWriter(file));
 
             for (int line : linesRd) {
                 writer.write(Integer.toString(line));

@@ -25,6 +25,8 @@ public class menuScene_Model {
     private Button startButton;
     private Button infoButton;
 
+    public menuScene_Model(){}
+
     /**
      * MenuScene Model constructor
      * @param menuStage Menu stage for application
