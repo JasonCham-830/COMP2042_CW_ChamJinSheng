@@ -28,7 +28,7 @@ public class infoScene_Model {
         this.infoStage = infoStage;
         root = new Group();
         this.scene = new Scene(root,600,800);
-        startButton = new Button("Start game");
+        startButton = new Button();
     }
 
     /**
