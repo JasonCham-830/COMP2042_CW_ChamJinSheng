@@ -1,19 +1,12 @@
 package FroggerApp.Menu_Scene;
 
-import FroggerApp.Game_Scene.gameScene_Controller;
-import FroggerApp.Game_Scene.gameScene_Model;
-import FroggerApp.Game_Scene.gameScene_View;
-import FroggerApp.Info_Scene.infoScene_Controller;
-import FroggerApp.Info_Scene.infoScene_Model;
-import FroggerApp.Info_Scene.infoScene_View;
-import FroggerApp.World.MyStage;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import FroggerApp.Scene_Manager.sceneManager;
 
 /**
  * MenuScene Model class
@@ -55,14 +48,8 @@ public class menuScene_Model {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                gameScene_View view = new gameScene_View();
-                gameScene_Model model = new gameScene_Model(menuStage);
-                gameScene_Controller controller= new gameScene_Controller(model,view);
-                try {
-                    controller.runGameScene();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                sceneManager sm = new sceneManager(menuStage);
+                sm.toGameScene();
             }
         });
     }
@@ -83,14 +70,8 @@ public class menuScene_Model {
         infoButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                infoScene_View view = new infoScene_View();
-                infoScene_Model model = new infoScene_Model(menuStage);
-                infoScene_Controller controller= new infoScene_Controller(view,model);
-                try {
-                    controller.runInfoScene();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                sceneManager sm = new sceneManager(menuStage);
+                sm.toGameScene();
             }
         });
     }

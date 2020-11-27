@@ -1,8 +1,6 @@
 package FroggerApp.Info_Scene;
 
-import FroggerApp.Game_Scene.gameScene_Controller;
-import FroggerApp.Game_Scene.gameScene_Model;
-import FroggerApp.Game_Scene.gameScene_View;
+import FroggerApp.Scene_Manager.sceneManager;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -47,14 +45,8 @@ public class infoScene_Model {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                gameScene_View view = new gameScene_View();
-                gameScene_Model model = new gameScene_Model(infoStage);
-                gameScene_Controller controller= new gameScene_Controller(model,view);
-                try {
-                    controller.runGameScene();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                sceneManager sm = new sceneManager(infoStage);
+                sm.toGameScene();
             }
         });
     }
