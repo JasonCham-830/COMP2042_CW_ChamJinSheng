@@ -12,14 +12,10 @@ public class gameTest{
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
-    @Before
-    public void setUp(){
-        model = new gameScene_Model();
-        testSetNumber();
-    }
 
     @Test
     public void testSetNumber() {
+        model = new gameScene_Model();
         thrown.expect(ArithmeticException.class);
         thrown.expectMessage("Negative Score is not allowed");
         model.setNumber(-1);
