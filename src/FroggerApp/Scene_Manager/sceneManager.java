@@ -6,6 +6,9 @@ import FroggerApp.Game_Scene.gameScene_View;
 import FroggerApp.Info_Scene.infoScene_Controller;
 import FroggerApp.Info_Scene.infoScene_Model;
 import FroggerApp.Info_Scene.infoScene_View;
+import FroggerApp.Menu_Scene.menuScene_Controller;
+import FroggerApp.Menu_Scene.menuScene_Model;
+import FroggerApp.Menu_Scene.menuScene_View;
 import javafx.stage.Stage;
 
 /**
@@ -46,6 +49,20 @@ public class sceneManager {
         infoScene_Controller controller= new infoScene_Controller(view,model);
         try {
             controller.runInfoScene();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * toMenuScene method to change current scene to Menu Scene
+     */
+    public void toMenuScene(){
+        menuScene_View view = new menuScene_View();
+        menuScene_Model model = new menuScene_Model(stage);
+        menuScene_Controller controller = new menuScene_Controller(view, model);
+        try{
+            controller.runMenuScene();
         } catch (Exception e) {
             e.printStackTrace();
         }
