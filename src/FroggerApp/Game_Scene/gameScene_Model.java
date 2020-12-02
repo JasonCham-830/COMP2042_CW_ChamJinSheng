@@ -2,6 +2,7 @@ package FroggerApp.Game_Scene;
 
 import FroggerApp.Actor.Animal;
 import FroggerApp.Actor.Digit;
+import FroggerApp.Scene_Manager.sceneManager;
 import FroggerApp.Score_File.scoreFile;
 import FroggerApp.Menu_Scene.menuScene_Controller;
 import FroggerApp.Menu_Scene.menuScene_Model;
@@ -112,14 +113,8 @@ public class gameScene_Model {
             if(result!= null && result == quit){
                 primaryStage.close();
             } else {
-                menuScene_View view = new menuScene_View();
-                menuScene_Model model = new menuScene_Model(primaryStage);
-                menuScene_Controller controller = new menuScene_Controller(view, model);
-                try {
-                    controller.runMenuScene();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                sceneManager sm = new sceneManager(primaryStage);
+                sm.toMenuScene();
             }
         });
 

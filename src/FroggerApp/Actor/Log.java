@@ -45,3 +45,10 @@ public class Log extends Actor {
 		return speed < 0;
 	}
 }
+
+/*
+@startuml
+class Log(){
+}
+
+ */
