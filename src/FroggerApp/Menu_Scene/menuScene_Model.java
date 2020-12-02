@@ -71,7 +71,7 @@ public class menuScene_Model {
             @Override
             public void handle(ActionEvent actionEvent) {
                 sceneManager sm = new sceneManager(menuStage);
-                sm.toGameScene();
+                sm.toInfoScene();
             }
         });
     }

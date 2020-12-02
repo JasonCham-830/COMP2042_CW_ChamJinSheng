@@ -19,14 +19,20 @@ public class scoreFile {
     public static ArrayList sortFile(int point) throws IOException {
 
         File file = new File ("src/FroggerApp/Score_File/scoreOutput.txt");
+        BufferedWriter writer = null;
+        ArrayList<Integer> lines = new ArrayList<Integer>();
+        ArrayList<Integer> linesRd = new ArrayList<Integer>();
+
         if(file.createNewFile()){
             System.out.println("File has been created");
+            BufferedWriter writeNewFile = new BufferedWriter(new FileWriter(file));
+            for (int i=1; i<=5; i++) {
+                writeNewFile.write(i + "0");
+                writeNewFile.newLine();
+            }
+            writeNewFile.close();
         }
 
-        BufferedReader reader = null;
-        BufferedWriter writer = null;
-        ArrayList<Integer> lines = new ArrayList<Integer>(Arrays.asList(10, 20, 30, 40, 50));
-        ArrayList<Integer> linesRd = new ArrayList<Integer>();
         try {
             Scanner scanner = new Scanner(file);
 
@@ -57,11 +63,6 @@ public class scoreFile {
         finally {
             try
             {
-                if (reader != null)
-                {
-                    reader.close();
-                }
-
                 if(writer != null)
                 {
                     writer.close();
