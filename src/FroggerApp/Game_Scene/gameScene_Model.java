@@ -98,7 +98,7 @@ public class gameScene_Model {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 
         alert.setTitle("You Have Won The Game!");
-        alert.setHeaderText("Your High Score: " + animal.getPoints() + "!");
+        alert.setHeaderText("Your Score: " + animal.getPoints() + "!");
         alert.setContentText(Integer.toString(list.get(0)));
 
         String highScoreContent = String.format("Highscore\n1. " + list.get(0) + "\n2. " + list.get(1) + "\n3. " + list.get(2) + "\n4. " + list.get(3) + "\n5. " + list.get(4));

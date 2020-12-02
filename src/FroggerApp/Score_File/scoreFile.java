@@ -2,6 +2,7 @@ package FroggerApp.Score_File;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -24,9 +25,8 @@ public class scoreFile {
 
         BufferedReader reader = null;
         BufferedWriter writer = null;
-        ArrayList<Integer> lines = new ArrayList<Integer>();
+        ArrayList<Integer> lines = new ArrayList<Integer>(Arrays.asList(10, 20, 30, 40, 50));
         ArrayList<Integer> linesRd = new ArrayList<Integer>();
-
         try {
             Scanner scanner = new Scanner(file);
 
