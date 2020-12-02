@@ -72,7 +72,7 @@ public class gameScene_Model {
                     setNumber(animal.getPoints());
                 }
                 if (animal.getStop()) {
-                    System.out.print("Game Ended");
+                    System.out.println("Game Ended");
                     background.stopMusic();
                     stop();
                     background.stop();
