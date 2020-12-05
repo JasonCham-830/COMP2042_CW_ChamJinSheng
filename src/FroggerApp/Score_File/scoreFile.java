@@ -49,8 +49,6 @@ public class scoreFile {
 //                if (!linesRd.contains(data)) {
 //                    linesRd.add(data);
 //                }
-
-
             if(linesRd.size()>6){
                 linesRd.remove(6);
             }

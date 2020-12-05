@@ -1,11 +1,9 @@
 package FroggerApp.Info_Scene;
 
-import FroggerApp.Menu_Scene.menuScene_Model;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.Assert.*;
 
 public class infoScene_ModelTest {
 

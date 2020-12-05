@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"FroggerApp.Actor"},{"l":"FroggerApp.Application"},{"l":"FroggerApp.Game_Scene"},{"l":"FroggerApp.Info_Scene"},{"l":"FroggerApp.Menu_Scene"},{"l":"FroggerApp.Score_File"},{"l":"FroggerApp.World"}]
