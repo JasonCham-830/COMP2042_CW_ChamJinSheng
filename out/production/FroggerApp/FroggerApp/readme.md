@@ -43,7 +43,12 @@ info scene is to provide rules and guidelines for players to play to game
 
 ###Refractor code
 - I have refractor some of the original code by adding some design patterns
-
+- Below shows an example of abstract factory method used. 
+- The first image is from the abstract class.
+- The second and third image are examples from classes that uses the abstract method.
+<br/>![](Images_File/abstractClass.PNG) 
+<br/>![](Images_File/abstract1.PNG) 
+<br/>![](Images_File/abstract2.PNG) 
 
 ###MVC architecture
 - I have organized the code in a MVC architecture for all of the scenes in my code.
@@ -67,5 +72,5 @@ info scene is to provide rules and guidelines for players to play to game
 
 ###Use build files
 - I have use Ant build files for my program.
-- Below shows my code is build successfully.
-  
+- Below shows the results of my code is build successfully.
+<br/>![](Images_File/buildFile.PNG)  
