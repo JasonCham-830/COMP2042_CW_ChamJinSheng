@@ -1,5 +1,6 @@
-package FroggerApp.Menu_Scene;
+package FroggerApp.jUnit.test;
 
+import FroggerApp.Menu_Scene.menuScene_Model;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

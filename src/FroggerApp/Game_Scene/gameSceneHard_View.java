@@ -33,18 +33,18 @@ public class gameSceneHard_View {
         background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 500, 166, -2));
 
         //1st
-        background.add(new WetTurtle(500, 217, 2, 130, 130));
-        background.add(new WetTurtle(300, 217, 2, 130, 130));
-        background.add(new WetTurtle(100, 217, 2, 130, 130));
+        background.add(new WetTurtle(500, 217, -2, 130, 130));
+        background.add(new WetTurtle(300, 217, -2, 130, 130));
+        background.add(new WetTurtle(100, 217, -2, 130, 130));
 
         //2nd
-        background.add(new WetTurtle(200, 329, -2, 130, 130));
-        background.add(new WetTurtle(400, 329, -2, 130, 130));
-        background.add(new WetTurtle(599, 329, -2, 130, 130));
+        background.add(new WetTurtle(200, 329, 1, 130, 130));
+        background.add(new WetTurtle(400, 329, 1, 130, 130));
+        background.add(new WetTurtle(599, 329, 1, 130, 130));
 
-        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 50, 276, -2));
-        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 280, 276, -2));
-        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 510, 276, -2));
+        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 50, 276, 2));
+        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 280, 276, 2));
+        background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 510, 276, 2));
 
         background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 0, 376, 2));
         background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 220, 376, 2));

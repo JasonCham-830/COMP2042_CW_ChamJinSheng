@@ -1,5 +1,6 @@
-package FroggerApp.Game_Scene;
+package FroggerApp.jUnit.test;
 
+import FroggerApp.Game_Scene.gameScene_Model;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

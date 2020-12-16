@@ -37,14 +37,7 @@ public class Animal extends Actor {
 	ArrayList<End> inter = new ArrayList<End>();
 
 	public Animal(){};
-
-	public static void setSpeed(double logL, double logR, double turtleL, double turtleR){
-		logLSpeed=logL;
-		logRSpeed=logR;
-		WetLSpeed=turtleL;
-		WetRSpeed=turtleR;
-		System.out.println(logLSpeed);
-	}
+	
 	/**
 	 * Animal Constructor to set parameters for frog in game scene
 	 * @param imageLink imageLink for frog images during game scene
@@ -241,7 +234,7 @@ public class Animal extends Actor {
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
 		}
-		//here
+		
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
 			if(getIntersectingObjects(Log.class).get(0).getLeft()) {
 				move(logLSpeed, 0);
@@ -307,6 +300,20 @@ public class Animal extends Actor {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * setSpeed method to change the speed of frog when sit on turtle/frog
+	 * @param logL Log2left speed
+	 * @param logR Log2Right speed
+	 * @param turtleL turtle2left speed
+	 * @param turtleR turtle2right speed
+	 */
+	public static void setSpeed(double logL, double logR, double turtleL, double turtleR){
+		logLSpeed=logL;
+		logRSpeed=logR;
+		WetLSpeed=turtleL;
+		WetRSpeed=turtleR;
 	}
 
 }

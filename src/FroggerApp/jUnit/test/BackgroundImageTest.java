@@ -1,13 +1,13 @@
-package FroggerApp.Actor;
+package FroggerApp.jUnit.test;
 
+import FroggerApp.Actor.BackgroundImage;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+public class BackgroundImageTest {
 
-public class ObstacleTest {
-
-    private Obstacle obstacle;
+    private BackgroundImage backgroundImage;
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -16,7 +16,7 @@ public class ObstacleTest {
     @Test
     public void testBackgroundImageInvalidImg() {
         thrown.expect(IllegalArgumentException.class);
-        obstacle = new Obstacle("Invalid URL link",20,40,12,55,100);
+        backgroundImage = new BackgroundImage("Invalid URL link");
     }
 
 }

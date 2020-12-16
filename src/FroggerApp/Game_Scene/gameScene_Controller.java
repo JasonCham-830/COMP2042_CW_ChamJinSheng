@@ -64,7 +64,7 @@ public class gameScene_Controller {
      */
     public void runGameSceneHard() throws Exception {
         view2.gameStart(model.getPrimaryStage(),model.getBackground(),model.getAnimal(),model.getScene());
-        animal.setSpeed(-2.0,2.0,-2.0,2.0);
+        animal.setSpeed(-2.0,2.0,-2.0,1.0);
         model.start();
     }
 }
