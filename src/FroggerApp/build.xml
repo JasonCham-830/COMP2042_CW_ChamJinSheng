@@ -15,7 +15,7 @@
             </fileset>
         </path>
 
-        <javac includentruntime = "false" srcdir ="./src" destdir ="intermediary">
+        <javac includeantruntime = "false" srcdir ="./" destdir ="intermediary">
             <classpath refid = "pathId"/>
         </javac>
 

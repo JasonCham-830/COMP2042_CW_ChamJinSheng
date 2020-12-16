@@ -6,14 +6,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Game Scene View
+ * Game Scene Easy View
  */
-public class gameScene_View {
+public class gameSceneEasy_View {
 
         /**
          * Empty constructor
          */
-    public gameScene_View() {}
+    public gameSceneEasy_View() {}
 
         /**
          * Display background, images and start the application
@@ -26,8 +26,7 @@ public class gameScene_View {
 
     public void gameStart(Stage primaryStage, MyStage background, Animal animal,Scene scene) throws Exception {
 
-            background.add(new BackgroundImage("file:src/FroggerApp/Images_File/BackgroundImage.jpg"));
-
+            background.add(new BackgroundImage("file:src/FroggerApp/Images_File/backgroundEasy.jpg"));
             background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 0, 166, 0.75));
             background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 220, 166, 0.75));
             background.add(new Log("file:src/FroggerApp/Images_File/log3.png", 150, 440, 166, 0.75));

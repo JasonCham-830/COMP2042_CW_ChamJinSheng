@@ -32,6 +32,12 @@ stage(Frogger Arcade Application).
 - I have created an info scene containing a button which is connected to the game scene. The function of this
 info scene is to provide rules and guidelines for players to play to game
 <br/>![](Images_File/infoScene.PNG)
+
+### 2 Game modes 
+- I have created 2 game modes, which is an easy mode and a hard mode.
+- Below shows the game scene for easy mode and hard mode.
+<br/>**Easy Mode**![](Images_File/easyMode.PNG)
+<br/>**Hard Mode**![](Images_File/hardMode.PNG)
                                       
 ### Highscore popup
 - I have created a highscore popup after the player won the game. 

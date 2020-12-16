@@ -1,4 +1,4 @@
-package FroggerApp.Menu_Scene;
+package FroggerApp.Level_Scene;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -11,67 +11,65 @@ import FroggerApp.Scene_Manager.sceneManager;
 /**
  * MenuScene Model class
  */
-public class menuScene_Model {
+public class levelScene_Model {
     private Stage menuStage;
     private Scene scene;
     private Group root;
-    private Button startButton;
-    private Button infoButton;
-
-    public menuScene_Model(){}
+    private Button level1Button;
+    private Button level2Button;
 
     /**
-     * MenuScene Model constructor
+     * LevelScene Model constructor
      * @param menuStage Menu stage for application
      */
-    public menuScene_Model(Stage menuStage){
+    public levelScene_Model(Stage menuStage){
         this.menuStage = menuStage;
         root = new Group();
         this.scene = new Scene(root, 600, 800);
-        startButton = new Button();
-        infoButton = new Button();
+        level1Button = new Button();
+        level2Button = new Button();
     }
 
     /**
-     * getStartButton method to get start button in menu scene
-     * @return startButton
+     * getLevel1Button method to get easy button in level scene
+     * @return level1Button
      */
-    public Button getStartButton(){
-        return startButton;
+    public Button getLevel1Button(){
+        return level1Button;
     }
 
     /**
-     * setStartButton method to link the menu scene to game scene
-     * @param startButton Start button in menu scene
+     * setLevel1Button method to link the level scene to easy mode game scene
+     * @param level1Button Easy button in level scene
      */
-    public void setStartButton(Button startButton){
-        startButton.setOnAction(new EventHandler<ActionEvent>() {
+    public void setLevel1Button(Button level1Button){
+        level1Button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 sceneManager sm = new sceneManager(menuStage);
-                sm.toLevelScene();
+                sm.toGameSceneEasy();
             }
         });
     }
 
     /**
-     * getInfoButton method to get info button in menu scene
-     * @return infoButton
+     * getLevel2Button method to get hardMode button in level scene
+     * @return level2Button
      */
-    public Button getInfoButton(){
-        return infoButton;
+    public Button getLevel2Button(){
+        return level2Button;
     }
 
     /**
-     * setInfoButton method to link the menu scene to info scene
-     * @param infoButton Info button in menu scene
+     * setLevel2Button method to link the level scene to hard mode game scene
+     * @param level2Button Hard button in menu scene
      */
-    public void setInfoButton(Button infoButton){
-        infoButton.setOnAction(new EventHandler<ActionEvent>() {
+    public void setLevel2Button(Button level2Button){
+        level2Button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
                 sceneManager sm = new sceneManager(menuStage);
-                sm.toInfoScene();
+                sm.toGameSceneHard();
             }
         });
     }

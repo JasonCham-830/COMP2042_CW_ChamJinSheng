@@ -46,7 +46,7 @@ public class infoScene_Model {
             @Override
             public void handle(ActionEvent actionEvent) {
                 sceneManager sm = new sceneManager(infoStage);
-                sm.toGameScene();
+                sm.toLevelScene();
             }
         });
     }

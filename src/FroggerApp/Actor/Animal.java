@@ -22,6 +22,10 @@ public class Animal extends Actor {
 	private double movement = 13.3333333*2;
 	private double movementX = 10.666666*2;
 	private double w = 800;
+	private static double logLSpeed=0;
+	private static double logRSpeed=0;
+	private static double WetLSpeed=0;
+	private static double WetRSpeed=0;
 
 	private boolean second = false;
 	private boolean noMove = false;
@@ -32,6 +36,15 @@ public class Animal extends Actor {
 
 	ArrayList<End> inter = new ArrayList<End>();
 
+	public Animal(){};
+
+	public static void setSpeed(double logL, double logR, double turtleL, double turtleR){
+		logLSpeed=logL;
+		logRSpeed=logR;
+		WetLSpeed=turtleL;
+		WetRSpeed=turtleR;
+		System.out.println(logLSpeed);
+	}
 	/**
 	 * Animal Constructor to set parameters for frog in game scene
 	 * @param imageLink imageLink for frog images during game scene
@@ -228,20 +241,26 @@ public class Animal extends Actor {
 		if (getX() == 240 && getY() == 82) {
 			stop = true;
 		}
+		//here
 		if (getIntersectingObjects(Log.class).size() >= 1 && !noMove) {
-			if(getIntersectingObjects(Log.class).get(0).getLeft())
-				move(-2,0);
-			else
-				move (.75,0);
+			if(getIntersectingObjects(Log.class).get(0).getLeft()) {
+				move(logLSpeed, 0);
+			}
+			else {
+				move(logRSpeed, 0);
+			}
 		}
 		else if (getIntersectingObjects(Turtle.class).size() >= 1 && !noMove) {
-			move(-1,0);
+			move(WetLSpeed,0);
 		}
 		else if (getIntersectingObjects(WetTurtle.class).size() >= 1) {
 			if (getIntersectingObjects(WetTurtle.class).get(0).isSunk()) {
 				waterDeath = true;
-			} else {
-				move(-1,0);
+			} else if(getIntersectingObjects(WetTurtle.class).get(0).getLeft()) {
+				move(WetLSpeed,0);
+			}
+			else {
+				move(WetRSpeed,0);
 			}
 		}
 		else if (getIntersectingObjects(End.class).size() >= 1) {
@@ -289,4 +308,5 @@ public class Animal extends Actor {
 		}
 		return false;
 	}
+
 }
