@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/out/test/FroggerApp"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test"/>
+		<testFolder url="file://$MODULE_DIR$/src/FroggerApp/Testing_File"/>
+	</contentEntry>
+	<lib name="JUnit4" scope="TEST"/>
+	<levels>
+		<level name="lib" value="project"/>
+		<level name="junit-4.10 (1)" value="project"/>
+	</levels>
+</component>
