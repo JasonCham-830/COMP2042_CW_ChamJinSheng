@@ -8,6 +8,9 @@ Frogger Arcade Application created using javafx and CSS
 - Javafx library
 - Junit 4.0
 
+## Github link to my repo
+https://github.com/JasonCham-830/COMP2042_CW_ChamJinSheng.git
+
 ## Changes made for application
 
 ### Git use
